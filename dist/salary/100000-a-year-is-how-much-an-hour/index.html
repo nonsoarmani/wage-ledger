@@ -1,0 +1,80 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>$100,000 a Year is How Much an Hour? | Wage Ledger</title>
+<meta name="description" content="$100,000 a year is $48.08 an hour, based on a 40-hour week. See the full daily, weekly, and monthly breakdown.">
+<style>
+  body { font-family: sans-serif; max-width: 680px; margin: 40px auto; padding: 0 20px; color: #16241C; }
+  h1 { font-size: 28px; }
+  .answer { background: #EFE9DA; padding: 24px; border-radius: 6px; margin: 20px 0; }
+  .answer .big { font-size: 42px; font-weight: bold; color: #A9603F; }
+  table { width: 100%; border-collapse: collapse; margin-top: 20px; }
+  td { padding: 10px 4px; border-bottom: 1px solid #ddd; }
+  .field { margin-top: 16px; }
+  input { padding: 6px; width: 100px; }
+</style>
+</head>
+<body>
+
+<h1>$100,000 a year is how much an hour?</h1>
+
+<div class="answer">
+  <div>Hourly rate</div>
+  <div class="big" id="heroNumber">$48.08</div>
+  <div id="assumptions">Based on a 40-hour week, 52 weeks a year (2,080 hours total).</div>
+
+  <div class="field">
+    <label>Annual salary <input type="number" id="salaryInput" value="100000"></label>
+    <label>Hours/week <input type="number" id="hoursInput" value="40"></label>
+    <label>Weeks/year <input type="number" id="weeksInput" value="52"></label>
+  </div>
+</div>
+
+<h2>Full breakdown</h2>
+<table>
+  <tr><td>Hourly</td><td id="rowHourly">$48.08</td></tr>
+  <tr><td>Daily</td><td id="rowDaily">$384.62</td></tr>
+  <tr><td>Weekly</td><td id="rowWeekly">$1,923.08</td></tr>
+  <tr><td>Biweekly</td><td id="rowBiweekly">$3,846.15</td></tr>
+  <tr><td>Semi-monthly</td><td id="rowSemi">$4,166.67</td></tr>
+  <tr><td>Monthly</td><td id="rowMonthly">$8,333.33</td></tr>
+  <tr><td>Annual</td><td id="rowAnnual">$100,000</td></tr>
+</table>
+
+<h2>Frequently asked</h2>
+<p><strong>Is $100,000 a year a good salary?</strong> It depends heavily on your location and household size.</p>
+<p><strong>What is $100,000 after taxes?</strong> Take-home pay varies by state and filing status - as a rough planning range, expect to keep roughly 75-82% after tax in most states.</p>
+
+<p><a href="/">&larr; Browse every salary conversion</a></p>
+
+<script>
+function fmt(n) { return '$' + n.toLocaleString('en-US', {minimumFractionDigits:2, maximumFractionDigits:2}); }
+function recalc() {
+  var salary = parseFloat(document.getElementById('salaryInput').value) || 0;
+  var hours = parseFloat(document.getElementById('hoursInput').value) || 0;
+  var weeks = parseFloat(document.getElementById('weeksInput').value) || 0;
+  var totalHours = hours * weeks;
+  var hourly = totalHours ? salary / totalHours : 0;
+  var daily = hourly * (hours / 5 || 8);
+  var weekly = hourly * hours;
+  var biweekly = weekly * 2;
+  var monthly = salary / 12;
+  var semi = salary / 24;
+  document.getElementById('heroNumber').textContent = fmt(hourly);
+  document.getElementById('rowHourly').textContent = fmt(hourly);
+  document.getElementById('rowDaily').textContent = fmt(daily);
+  document.getElementById('rowWeekly').textContent = fmt(weekly);
+  document.getElementById('rowBiweekly').textContent = fmt(biweekly);
+  document.getElementById('rowSemi').textContent = fmt(semi);
+  document.getElementById('rowMonthly').textContent = fmt(monthly);
+  document.getElementById('rowAnnual').textContent = fmt(salary);
+}
+['salaryInput','hoursInput','weeksInput'].forEach(function(id){
+  document.getElementById(id).addEventListener('input', recalc);
+});
+</script>
+
+</body>
+</html>
