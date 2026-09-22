@@ -3,20 +3,38 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
-<title>$72,000 a Year is How Much an Hour? | Wage Ledger</title>
+<title>$72,000 a Year is How Much an Hour? | Hourly Breakdown</title>
 <meta name="description" content="$72,000 a year is $34.62 an hour, based on a 40-hour week. See the full daily, weekly, and monthly breakdown.">
 <style>
-  body { font-family: sans-serif; max-width: 680px; margin: 40px auto; padding: 0 20px; color: #16241C; }
-  h1 { font-size: 28px; }
-  .answer { background: #EFE9DA; padding: 24px; border-radius: 6px; margin: 20px 0; }
-  .answer .big { font-size: 42px; font-weight: bold; color: #A9603F; }
-  table { width: 100%; border-collapse: collapse; margin-top: 20px; }
-  td { padding: 10px 4px; border-bottom: 1px solid #ddd; }
-  .field { margin-top: 16px; }
-  input { padding: 6px; width: 100px; }
+  :root {
+    --ink: #16241C;
+    --paper: #ffffff;
+    --panel: #EFE9DA;
+    --gold: #A9603F;
+    --line: #e3ddc9;
+  }
+  * { box-sizing: border-box; }
+  body { font-family: -apple-system, 'Segoe UI', sans-serif; max-width: 680px; margin: 0 auto; padding: 0 20px 60px; color: var(--ink); line-height: 1.5; }
+  header { display: flex; align-items: center; justify-content: space-between; padding: 26px 0; border-bottom: 1px solid var(--line); margin-bottom: 30px; }
+  header .logo { font-weight: 700; font-size: 18px; color: var(--ink); text-decoration: none; }
+  header nav a { color: var(--ink); text-decoration: none; font-size: 14px; opacity: 0.75; }
+  h1 { font-size: 27px; line-height: 1.25; }
+  .answer { background: var(--panel); padding: 24px; border-radius: 10px; margin: 20px 0; }
+  .answer .big { font-size: 40px; font-weight: bold; color: var(--gold); }
+  table { width: 100%; border-collapse: collapse; margin-top: 16px; }
+  td { padding: 10px 4px; border-bottom: 1px solid var(--line); }
+  .field { margin-top: 16px; display: flex; gap: 14px; flex-wrap: wrap; }
+  .field label { font-size: 13px; }
+  input { padding: 6px; width: 90px; border: 1px solid var(--line); border-radius: 4px; margin-top: 4px; display: block; }
+  footer { margin-top: 40px; padding-top: 16px; border-top: 1px solid var(--line); font-size: 13px; color: #8a8578; }
 </style>
 </head>
 <body>
+
+<header>
+  <a class="logo" href="/">Hourly Breakdown</a>
+  <nav><a href="/">&larr; All salaries</a></nav>
+</header>
 
 <h1>$72,000 a year is how much an hour?</h1>
 
@@ -47,7 +65,7 @@
 <p><strong>Is $72,000 a year a good salary?</strong> It depends heavily on your location and household size.</p>
 <p><strong>What is $72,000 after taxes?</strong> Take-home pay varies by state and filing status - as a rough planning range, expect to keep roughly 75-82% after tax in most states.</p>
 
-<p><a href="/">&larr; Browse every salary conversion</a></p>
+<footer>&copy; Hourly Breakdown</footer>
 
 <script>
 function fmt(n) { return '$' + n.toLocaleString('en-US', {minimumFractionDigits:2, maximumFractionDigits:2}); }
