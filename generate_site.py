@@ -7,7 +7,7 @@ CSV_PATH = os.path.join(ROOT, "keywords.csv")
 DIST = os.path.join(ROOT, "dist")
 
 # ---- EDIT THIS to your real domain before you deploy ----
-DOMAIN = "https://hourlybreakdown.com/"
+DOMAIN = "https://yoursite.com"
 
 with open(TEMPLATE_PATH, "r", encoding="utf-8") as f:
     TEMPLATE = f.read()
